@@ -74,7 +74,7 @@ export default function Resume() {
           View Resume
         </a>
         <a
-          href="/Jeray_NeelySpeaks_Associate_Engineer_Resume.pdf"
+          href="/jeray_neelyspeaks_associate_engineer_resume.pdf"
           download
           className="px-6 py-3 border border-cyber-blue text-cyber-blue rounded-lg hover:bg-cyber-blue hover:text-white hover:scale-105 transform transition-all duration-300 shadow-[0_0_10px_#00BFFF55]"
         >
