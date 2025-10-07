@@ -1,0 +1,15 @@
+body {
+    font-family: 'JetBrains Mono', monospace;
+    background-color: #0a0f1f;
+    color: #e0e0e0;
+  }
+  
+  a {
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+  }
+  
+  a:hover {
+    color: #00BFFF;
+    text-shadow: 0 0 8px #00BFFF;
+  }
+  
