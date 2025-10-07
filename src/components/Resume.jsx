@@ -89,7 +89,7 @@ export default function Resume() {
         className="w-full max-w-4xl border border-cyber-blue/30 rounded-xl shadow-lg overflow-hidden hover:shadow-[0_0_30px_#00BFFF66] transition-all duration-500"
       >
         <iframe
-          src="/Jeray_NeelySpeaks_Associate_Engineer_Resume.pdf"
+          src="/jeray_neelyspeaks_associate_engineer_resume.pdf"
           title="Jeray Neely-Speaks Resume"
           className="w-full h-[80vh] rounded-xl"
         />
