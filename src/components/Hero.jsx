@@ -9,9 +9,21 @@ export default function Hero() {
       {/* 🧭 Navbar */}
       <nav className="fixed top-0 left-0 w-full bg-[#0a0f1f]/80 backdrop-blur-md border-b border-cyber-blue/30 z-50">
         <ul className="flex justify-center gap-10 py-4 text-gray-200 font-mono">
-          <li><a href="#hero" className="hover:text-cyber-green transition">Home</a></li>
-          <li><a href="#projects" className="hover:text-cyber-green transition">Projects</a></li>
-          <li><a href="#contact" className="hover:text-cyber-green transition">Contact</a></li>
+          <li>
+            <a href="#hero" className="hover:text-cyber-green transition">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="#projects" className="hover:text-cyber-green transition">
+              Projects
+            </a>
+          </li>
+          <li>
+            <a href="#contact" className="hover:text-cyber-green transition">
+              Contact
+            </a>
+          </li>
         </ul>
       </nav>
 
@@ -48,9 +60,12 @@ export default function Hero() {
 
           <TypeAnimation
             sequence={[
-              "Software Engineer", 2000,
-              "Cybersecurity Analyst", 2000,
-              "Backend Developer", 2000,
+              "Software Engineer",
+              2000,
+              "Cybersecurity Analyst",
+              2000,
+              "Backend Developer",
+              2000,
             ]}
             wrapper="span"
             speed={50}
@@ -58,11 +73,11 @@ export default function Hero() {
             className="block text-xl md:text-2xl text-cyber-green mb-8 tracking-widest uppercase drop-shadow-[0_0_10px_#00FF9C]"
           />
 
-<p className="max-w-2xl mx-auto mb-12 leading-relaxed text-gray-100 drop-shadow-[0_0_12px_#ffffff] animate-[brightGlow_2.5s_ease-in-out_infinite_alternate]">
-  Building secure systems, data pipelines, and AI-powered tools for a safer digital world.
-</p>
-
-
+          {/* 🧩 Tagline */}
+          <p className="max-w-2xl mx-auto mb-12 leading-relaxed text-gray-100 drop-shadow-[0_0_12px_#ffffff] animate-[brightGlow_2.5s_ease-in-out_infinite_alternate]">
+            Building secure systems, data pipelines, and AI-powered tools for a
+            safer digital world.
+          </p>
 
           {/* 🔗 Cyber Boxes for Links */}
           <div className="flex flex-wrap justify-center gap-8 mt-8">
@@ -88,13 +103,15 @@ export default function Hero() {
               className="group flex flex-col items-center gap-3 p-6 w-44 h-44 border border-cyber-green rounded-xl bg-cyber-green/5 hover:bg-cyber-green/20 transition-all duration-300 shadow-[0_0_15px_#00FF9C55] hover:shadow-[0_0_30px_#00FF9C88]"
             >
               <Linkedin className="w-10 h-10 text-cyber-green group-hover:animate-pulse" />
-              <h3 className="text-lg font-semibold text-cyber-green">LinkedIn</h3>
+              <h3 className="text-lg font-semibold text-cyber-green">
+                LinkedIn
+              </h3>
               <p className="text-xs text-gray-400">Let’s connect</p>
             </motion.a>
 
             {/* Resume */}
             <motion.a
-              href="/Jeray_NeelySpeaks_Associate_Engineer_Resume.pdf"
+              href={`${process.env.PUBLIC_URL}/jeray_neelyspeaks_associate_engineer_resume.pdf`}
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.08 }}
