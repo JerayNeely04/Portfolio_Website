@@ -1,12 +1,34 @@
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 export default function Resume() {
   return (
     <section className="relative min-h-screen flex flex-col justify-center items-center bg-[#0a0f1f] text-gray-200 px-6 py-20 text-center overflow-hidden font-mono">
 
+      {/* 🔙 Navigation Buttons */}
+      <div className="absolute top-6 flex gap-4">
+        <Link
+          to="/"
+          className="px-5 py-2 bg-cyber-blue/20 border border-cyber-blue text-cyber-blue rounded-lg hover:bg-cyber-blue hover:text-white transition-all duration-300"
+        >
+          Home
+        </Link>
+        <Link
+          to="/projects"
+          className="px-5 py-2 bg-cyber-green/20 border border-cyber-green text-cyber-green rounded-lg hover:bg-cyber-green hover:text-black transition-all duration-300"
+        >
+          Projects
+        </Link>
+        <Link
+          to="/contact"
+          className="px-5 py-2 bg-cyber-purple/20 border border-cyber-purple text-cyber-purple rounded-lg hover:bg-cyber-purple hover:text-white transition-all duration-300"
+        >
+          Contact
+        </Link>
+      </div>
+
       {/* === CYBER GRID BACKGROUND === */}
       <div className="absolute inset-0 overflow-hidden -z-10">
-        {/* Horizontal lines */}
         {[...Array(20)].map((_, i) => (
           <motion.div
             key={`h-${i}`}
@@ -16,8 +38,6 @@ export default function Resume() {
             transition={{ duration: 4, delay: i * 0.1, repeat: Infinity }}
           />
         ))}
-
-        {/* Vertical lines */}
         {[...Array(20)].map((_, i) => (
           <motion.div
             key={`v-${i}`}
@@ -27,20 +47,6 @@ export default function Resume() {
             transition={{ duration: 5, delay: i * 0.1, repeat: Infinity }}
           />
         ))}
-
-        {/* Floating pulse light */}
-        <motion.div
-          className="absolute w-64 h-64 rounded-full bg-cyber-blue/10 blur-3xl"
-          animate={{
-            x: ["0%", "80%", "0%"],
-            y: ["0%", "60%", "0%"],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
       </div>
 
       {/* === CONTENT === */}
@@ -52,15 +58,6 @@ export default function Resume() {
       >
         My Resume
       </motion.h1>
-
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.4, duration: 0.6 }}
-        className="text-gray-400 mb-8 max-w-2xl"
-      >
-        You can view or download my most recent resume below.
-      </motion.p>
 
       <motion.div
         initial={{ opacity: 0 }}

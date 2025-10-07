@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import ParticleBackground from "./ParticleBackground";
 import { TypeAnimation } from "react-type-animation";
 import { Github, Linkedin, FileText } from "lucide-react";
@@ -96,31 +97,26 @@ export default function Hero() {
 
             {/* LinkedIn */}
             <motion.a
-              href="https://linkedin.com/in/jeray-neely-speaks"
+              href="https://www.linkedin.com/in/jeray-neely-speaks-05931a234/"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.08 }}
               className="group flex flex-col items-center gap-3 p-6 w-44 h-44 border border-cyber-green rounded-xl bg-cyber-green/5 hover:bg-cyber-green/20 transition-all duration-300 shadow-[0_0_15px_#00FF9C55] hover:shadow-[0_0_30px_#00FF9C88]"
             >
               <Linkedin className="w-10 h-10 text-cyber-green group-hover:animate-pulse" />
-              <h3 className="text-lg font-semibold text-cyber-green">
-                LinkedIn
-              </h3>
+              <h3 className="text-lg font-semibold text-cyber-green">LinkedIn</h3>
               <p className="text-xs text-gray-400">Let’s connect</p>
             </motion.a>
 
             {/* Resume */}
-            <motion.a
-              href={`${process.env.PUBLIC_URL}/jeray_neelyspeaks_associate_engineer_resume.pdf`}
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.08 }}
+            <Link
+              to="/resume"
               className="group flex flex-col items-center gap-3 p-6 w-44 h-44 border border-cyber-blue rounded-xl bg-cyber-blue/5 hover:bg-cyber-blue/20 transition-all duration-300 shadow-[0_0_15px_#00BFFF55] hover:shadow-[0_0_30px_#00BFFF88]"
             >
               <FileText className="w-10 h-10 text-cyber-blue group-hover:animate-pulse" />
               <h3 className="text-lg font-semibold text-cyber-blue">Resume</h3>
               <p className="text-xs text-gray-400">View / Download</p>
-            </motion.a>
+            </Link>
           </div>
         </div>
       </section>
