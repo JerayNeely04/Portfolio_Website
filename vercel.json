@@ -1,13 +1,12 @@
 {
-    "routes": [
-      {
-        "src": "/(.*)\\.pdf",
-        "dest": "/$1.pdf"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "/index.html"
-      }
-    ]
-  }
-  
+  "routes": [
+    {
+      "src": "/(.*\\.pdf)",
+      "dest": "/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
