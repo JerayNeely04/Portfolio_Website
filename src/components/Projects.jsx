@@ -56,67 +56,115 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="min-h-screen bg-[#0a0f1f] text-gray-200 py-20 px-6 text-center font-mono relative"
+      className="min-h-screen bg-[#08101d] text-gray-200 py-24 px-6 font-mono relative"
     >
-      {/* 🔙 Navigation Buttons */}
-      <div className="absolute top-6 flex gap-4 left-1/2 -translate-x-1/2">
+      {/* Top Navigation */}
+      <div className="absolute top-6 left-1/2 -translate-x-1/2 flex gap-4 z-20">
         <Link
           to="/"
-          className="px-5 py-2 bg-cyber-blue/20 border border-cyber-blue text-cyber-blue rounded-lg hover:bg-cyber-blue hover:text-white transition-all duration-300"
+          className="px-5 py-2 rounded-lg border border-cyan-400/40 text-cyan-300 bg-cyan-400/5 hover:bg-cyan-400 hover:text-slate-950 transition-all duration-300"
         >
           Home
         </Link>
+
         <Link
           to="/resume"
-          className="px-5 py-2 bg-cyber-green/20 border border-cyber-green text-cyber-green rounded-lg hover:bg-cyber-green hover:text-black transition-all duration-300"
+          className="px-5 py-2 rounded-lg border border-emerald-400/40 text-emerald-300 bg-emerald-400/5 hover:bg-emerald-400 hover:text-slate-950 transition-all duration-300"
         >
           Resume
         </Link>
+
         <Link
           to="/contact"
-          className="px-5 py-2 bg-cyber-purple/20 border border-cyber-purple text-cyber-purple rounded-lg hover:bg-cyber-purple hover:text-white transition-all duration-300"
+          className="px-5 py-2 rounded-lg border border-violet-400/40 text-violet-300 bg-violet-400/5 hover:bg-violet-400 hover:text-white transition-all duration-300"
         >
           Contact
         </Link>
       </div>
 
-      {/* 🔷 Header */}
-      <h1 className="text-4xl font-bold text-cyber-blue mb-10 drop-shadow-[0_0_15px_#00BFFF] mt-20">
-        Projects
-      </h1>
+      {/* Header */}
+      <div className="max-w-4xl mx-auto text-center mt-16 mb-16">
+        <p className="text-sm uppercase tracking-[0.3em] text-cyan-400/70 mb-3">
+          Portfolio
+        </p>
 
-      {/* 🔹 Project Grid */}
-      <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          Featured Projects
+        </h1>
+
+        <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed">
+          A collection of software engineering, backend, data, and security-focused
+          projects built to solve real problems and demonstrate practical technical depth.
+        </p>
+      </div>
+
+      {/* Project Grid */}
+      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
         {projects.map((project, index) => (
           <div
             key={index}
-            className="p-6 bg-[#111827] border border-cyber-blue/30 rounded-xl shadow-lg hover:border-cyber-green/50 hover:shadow-[0_0_25px_#00FF9C] transition-all duration-300"
+            className="group rounded-2xl overflow-hidden border border-white/10 bg-[#0f172a]/90 backdrop-blur-sm hover:border-cyan-400/40 hover:-translate-y-1 transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.35)]"
           >
-            <h2 className="text-xl font-semibold text-cyber-blue mb-3">
-              {project.title}
-            </h2>
-            <p className="text-gray-400 mb-4">{project.description}</p>
-
-            <div className="flex flex-wrap justify-center gap-2 mb-4">
-              {project.tech.map((tech, i) => (
-                <span
-                  key={i}
-                  className="text-xs px-3 py-1 border border-cyber-blue/40 text-cyber-blue rounded-full"
-                >
-                  {tech}
-                </span>
-              ))}
+            {/* Image Frame Placeholder */}
+            <div className="h-48 border-b border-white/10 bg-gradient-to-br from-slate-800 via-slate-900 to-black flex items-center justify-center relative overflow-hidden">
+              <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.25),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(59,130,246,0.18),transparent_35%)]" />
+              
+              <div className="relative z-10 text-center px-4">
+                <div className="w-14 h-14 mx-auto mb-3 rounded-xl border border-cyan-400/30 bg-cyan-400/10 flex items-center justify-center text-cyan-300 text-lg">
+                  &lt;/&gt;
+                </div>
+                <p className="text-sm text-gray-400">Project Preview</p>
+                <p className="text-xs text-gray-500 mt-1">
+                  Screenshot frame placeholder
+                </p>
+              </div>
             </div>
 
-            {/* 🔗 GitHub Link */}
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-4 py-2 border border-cyber-green text-cyber-green rounded-md hover:bg-cyber-green hover:text-black transition-all duration-300"
-            >
-              View on GitHub →
-            </a>
+
+    {/* Subtle Page Background Binary */}
+<div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
+  <div className="w-full h-full text-[8px] md:text-[10px] font-mono leading-4 tracking-[0.25em] whitespace-pre-wrap text-cyan-400/10 select-none animate-[scrollSlow_80s_linear_infinite]">
+    {Array.from({ length: 5000 }).map((_, i) => (
+      <span key={i}>
+        {Math.random() > 0.5 ? "1" : "0"}
+        {i % 140 === 139 ? "\n" : " "}
+      </span>
+    ))}
+  </div>
+</div>
+
+            {/* Card Content */}
+            <div className="p-6 flex flex-col h-[calc(100%-12rem)]">
+              <h2 className="text-xl font-semibold text-white mb-3 group-hover:text-cyan-300 transition-colors duration-300">
+                {project.title}
+              </h2>
+
+              <p className="text-gray-400 text-sm leading-relaxed mb-5">
+                {project.description}
+              </p>
+
+              <div className="flex flex-wrap gap-2 mb-6">
+                {project.tech.map((tech, i) => (
+                  <span
+                    key={i}
+                    className="text-xs px-3 py-1 rounded-full border border-cyan-400/20 bg-cyan-400/5 text-cyan-300"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              <div className="mt-auto">
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center w-full px-4 py-3 rounded-lg border border-emerald-400/30 text-emerald-300 bg-emerald-400/5 hover:bg-emerald-400 hover:text-slate-950 transition-all duration-300 font-medium"
+                >
+                  View on GitHub →
+                </a>
+              </div>
+            </div>
           </div>
         ))}
       </div>
