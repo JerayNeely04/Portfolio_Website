@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-
+import websiteImg from "../components/website.jpg";
+import LoggerImg from "../components/AI Logger.jpg";
 export default function Projects() {
   const projects = [
     {
@@ -8,6 +9,7 @@ export default function Projects() {
         "Real-time Flask dashboard analyzing 50k+ security logs daily.",
       tech: ["Python", "Flask", "SQL", "HTML/CSS"],
       link: "https://github.com/JerayNeely04/log-analyzer",
+      image: LoggerImg,
     },
     {
       title: "AI Phishing Detection Tool",
@@ -22,6 +24,7 @@ export default function Projects() {
         "A personal website built with React, TailwindCSS, and Framer Motion showcasing projects, animations, and my professional resume.",
       tech: ["React", "TailwindCSS", "Framer Motion", "Node.js"],
       link: "https://github.com/JerayNeely04/Portfolio_Website",
+      image: websiteImg,
     },
     {
       title: "PeriodicTable Database",
@@ -105,33 +108,20 @@ export default function Projects() {
             key={index}
             className="group rounded-2xl overflow-hidden border border-white/10 bg-[#0f172a]/90 backdrop-blur-sm hover:border-cyan-400/40 hover:-translate-y-1 transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.35)]"
           >
-            {/* Image Frame Placeholder */}
-            <div className="h-48 border-b border-white/10 bg-gradient-to-br from-slate-800 via-slate-900 to-black flex items-center justify-center relative overflow-hidden">
-              <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.25),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(59,130,246,0.18),transparent_35%)]" />
-              
-              <div className="relative z-10 text-center px-4">
-                <div className="w-14 h-14 mx-auto mb-3 rounded-xl border border-cyan-400/30 bg-cyan-400/10 flex items-center justify-center text-cyan-300 text-lg">
-                  &lt;/&gt;
+            {/* Image Frame */}
+            <div className="h-48 overflow-hidden border-b border-white/10">
+              {project.image ? (
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                />
+              ) : (
+                <div className="h-full flex items-center justify-center text-gray-500 text-sm">
+                  No Preview
                 </div>
-                <p className="text-sm text-gray-400">Project Preview</p>
-                <p className="text-xs text-gray-500 mt-1">
-                  
-                </p>
-              </div>
+              )}
             </div>
-
-
-    {/* Subtle Page Background Binary */}
-<div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
-  <div className="w-full h-full text-[8px] md:text-[10px] font-mono leading-4 tracking-[0.25em] whitespace-pre-wrap text-cyan-400/10 select-none animate-[scrollSlow_80s_linear_infinite]">
-    {Array.from({ length: 5000 }).map((_, i) => (
-      <span key={i}>
-        {Math.random() > 0.5 ? "1" : "0"}
-        {i % 140 === 139 ? "\n" : " "}
-      </span>
-    ))}
-  </div>
-</div>
 
             {/* Card Content */}
             <div className="p-6 flex flex-col h-[calc(100%-12rem)]">
