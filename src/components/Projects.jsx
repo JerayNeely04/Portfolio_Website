@@ -115,7 +115,7 @@ export default function Projects() {
                 </div>
                 <p className="text-sm text-gray-400">Project Preview</p>
                 <p className="text-xs text-gray-500 mt-1">
-                  Screenshot frame placeholder
+                  
                 </p>
               </div>
             </div>
